@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[var myFunction = function($scope) {
+  var c = this;
+  c.downloadPDF = function() {
+    var ga = new GlideAjax('GeneratePDFScript');
+    ga.addParam('sysparm_name', 'generatePDFBase64');
+    ga.getXMLAnswer(function(response) {
+			console.log("PDF Response:", response);
+      if (response) {
+        var link = document.createElement('a');
+        link.href = 'data:application/pdf;base64,' + response;
+        link.download = 'demo.pdf';
+        link.click();
+      } else {
+        alert('生成PDF失败');
+      }
+    });
+  };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>download_pdf_button</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-20 02:58:53</sys_created_on>
+        <sys_id>8220387e83ed2210f980f1d6feaad3e0</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>download_pdf_button</sys_name>
+        <sys_package display_value="Demo3-PDF Generate PDF" source="x_1642217_demo3_0">32995cfe836d2210f980f1d6feaad3ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-PDF Generate PDF">32995cfe836d2210f980f1d6feaad3ec</sys_scope>
+        <sys_update_name>sp_widget_8220387e83ed2210f980f1d6feaad3e0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-20 06:26:49</sys_updated_on>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+ <button class="btn btn-primary" ng-click="c.downloadPDF()">下载 PDF</button>
+<!--  <ul class="step-progress">
+    <li class="active">Step 1: 基本信息</li>
+    <li>Step 2: 设备选择</li>
+    <li>Step 3: 软件配置</li>
+    <li>Step 4: 交付信息</li>
+    <li>Step 5: 最终确认</li>
+  </ul> -->
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function onLoad() {
+  // 初始化按钮点击事件
+  $("#update_button").on("click", function() {
+    // 显示对话框
+    $("#confirm_dialog").modal("show");
+  });
+  
+  // 确认按钮点击事件
+  $("#dialog_confirm").on("click", function() {
+    // 关闭对话框
+    $("#confirm_dialog").modal("hide");
+    
+    // 显示加载中状态
+    $("#status_field").val("更新中...");
+    
+    // 模拟Ajax调用
+    var ajax = new GlideAjax("DemoAjaxProcessor");
+    ajax.addParam("sysparm_name", "updateStatus");
+    ajax.getXMLAnswer(function(response) {
+      // 更新字段
+      $("#status_field").val(response);
+      
+      // 显示成功消息
+      g_form.addInfoMessage("状态已成功更新为: " + response);
+    });
+  });
+  
+  // 取消按钮点击事件
+  $("#dialog_cancel").on("click", function() {
+    // 关闭对话框
+    $("#confirm_dialog").modal("hide");
+    
+    // 可选: 显示取消消息
+    g_form.addInfoMessage("操作已取消");
+  });
+}]]></client_script>
+        <description/>
+        <direct>true</direct>
+        <endpoint>x_1642217_demo3_0_demo_confirm_dialog.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+  <div>
+    <h2>确认对话框示例</h2>
+    <p>点击下方按钮测试确认对话框功能</p>
+    
+    <!-- 操作按钮 -->
+    <button id="update_button" class="btn btn-primary">更新字段</button>
+    
+    <!-- 显示结果的字段 -->
+    <div class="form-group" style="margin-top: 20px;">
+      <label for="status_field">当前状态:</label>
+    <!--  <input type="text" class="form-control" id="status_field" readonly value="未更新"/> -->
+    </div>
+    
+    <!-- 对话框模板 -->
+    <div id="confirm_dialog" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">确认操作</h4>
+          </div>
+          <div class="modal-body">
+            <p>您确定要更新状态字段吗？</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="dialog_cancel">取消</button>
+            <button type="button" class="btn btn-primary" id="dialog_confirm">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</j:jelly>]]></html>
+        <name>demo_confirm_dialog</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-20 14:01:08</sys_created_on>
+        <sys_id>1cb6033e83e96210f980f1d6feaad38b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>demo_confirm_dialog</sys_name>
+        <sys_package display_value="Demo3-PDF Generate PDF" source="x_1642217_demo3_0">32995cfe836d2210f980f1d6feaad3ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-PDF Generate PDF">32995cfe836d2210f980f1d6feaad3ec</sys_scope>
+        <sys_update_name>sys_ui_page_1cb6033e83e96210f980f1d6feaad38b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-20 15:14:25</sys_updated_on>
+    </sys_ui_page>
+</record_update>

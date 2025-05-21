@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>open_demo_dialog</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>Condition: current.canWrite() // 例如只对有编辑权限的用户显示</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>open demo dialog</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[// 客户端脚本
+function onClick() {
+  // 使用 GlideDialogForm 打开 UI Page
+  var dialog = new GlideDialogForm(
+    "示例对话框",      // 对话框标题
+    "demo_confirm_dialog" // UI Page名称
+  );
+  
+  dialog.setSize(600, 400); // 设置对话框尺寸(可选)
+  dialog.render();
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-20 14:27:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9f7c0bf2832d6210f980f1d6feaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>open demo dialog</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Demo3-PDF Generate PDF" source="x_1642217_demo3_0">32995cfe836d2210f980f1d6feaad3ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-PDF Generate PDF">32995cfe836d2210f980f1d6feaad3ec</sys_scope>
+        <sys_update_name>sys_ui_action_9f7c0bf2832d6210f980f1d6feaad30d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-20 14:27:41</sys_updated_on>
+        <table>x_1642217_to_do_to_do</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

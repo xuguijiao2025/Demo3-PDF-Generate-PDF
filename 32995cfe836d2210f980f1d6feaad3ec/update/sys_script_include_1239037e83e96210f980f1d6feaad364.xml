@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1642217_demo3_0.DemoAjaxProcessor</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>DemoAjaxProcessor</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DemoAjaxProcessor = Class.create();
+DemoAjaxProcessor.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+  
+  updateStatus: function() {
+    // 这里可以添加实际的业务逻辑
+    // 例如更新记录字段等操作
+    
+    // 返回当前时间作为示例
+    return "已更新 - " + new GlideDateTime().getDisplayValue();
+  },
+  
+  type: 'DemoAjaxProcessor'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-20 14:07:07</sys_created_on>
+        <sys_id>1239037e83e96210f980f1d6feaad364</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>DemoAjaxProcessor</sys_name>
+        <sys_package display_value="Demo3-PDF Generate PDF" source="x_1642217_demo3_0">32995cfe836d2210f980f1d6feaad3ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo3-PDF Generate PDF">32995cfe836d2210f980f1d6feaad3ec</sys_scope>
+        <sys_update_name>sys_script_include_1239037e83e96210f980f1d6feaad364</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-20 15:28:00</sys_updated_on>
+    </sys_script_include>
+</record_update>
